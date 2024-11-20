@@ -39,5 +39,5 @@ jobs:
       uses: actions/upload-artifact@v3
       if: success() || failure()
       with:
-        name: Pytest Jenkinsfile
-        path: dirTestLab10
+        name: __pycache__
+        path: ./__pycache__
