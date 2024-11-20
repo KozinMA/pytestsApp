@@ -28,6 +28,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi   
     - name: Test with pytest
       run: |
+        pytest tests3.py
         pytest --junitxml=Jenkinsfile.xml
     - name: Test Jenkinsfile Generation
       uses: actions/upload-artifact@v4
