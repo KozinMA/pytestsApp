@@ -3,19 +3,22 @@ pipeline {
     agent any
 
     stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/KozinMA/pytestsApp.git'
+            }
+        }
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh '''
+                  python -m pip install --upgrade pip
+                  pip install -r requirements.txt
+                '''
             }
         }
-        stage('Test') {
+        stage('Tests') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'pytest --junitxml=result.xml tests3.py'
             }
         }
     }
