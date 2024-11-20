@@ -35,5 +35,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --junitxml=Jenkinsfile.xml tests3.py
-        reports:
-          junit: Jenkinsfile.xml
+    - name: Test Jenkinsfile Generation
+      uses: actions/upload-artifact@v3
+      if: success() || failure()
+      with:
+        name: Pytest Jenkinsfile   
