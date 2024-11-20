@@ -30,4 +30,8 @@ jobs:
       if: success() || failure()
       with:
         name: Resultfile
+<<<<<<< HEAD
         path: ./
+=======
+        path: ./
+>>>>>>> 92b04bb6196d438f04c2fe486d891880f4eacfc9
