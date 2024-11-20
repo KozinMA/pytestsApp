@@ -39,4 +39,5 @@ jobs:
       uses: actions/upload-artifact@v3
       if: success() || failure()
       with:
-        name: Pytest Jenkinsfile   
+        name: Pytest Jenkinsfile
+        path: dirTestLab10
