@@ -36,8 +36,8 @@ jobs:
       run: |
         pytest --junitxml=Jenkinsfile.xml tests3.py
     - name: Test Jenkinsfile Generation
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: success() || failure()
       with:
-        name: __pycache__
-        path: ./__pycache__
+        name: Jenkinsfile
+        path: ./
